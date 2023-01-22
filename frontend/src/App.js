@@ -7,12 +7,18 @@ function App() {
   const [name, setName] = useState("Your Name")
 
   const onClickHandler = async () => {
-
     const response = await fetch('http://localhost:8000', {
       mode: "cors",
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({name: name})
     })
-    console.log('🐷', response)
+    const json = await response.json()
+    alert(json["greeting"])
   }
+
   return (
     <div className="App">
       <label>名前</label>

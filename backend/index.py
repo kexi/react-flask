@@ -1,13 +1,14 @@
-from flask import Flask
+from flask import Flask, request
 from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
 
 
-@app.route("/")
+@app.route("/", methods=["POST"])
 def hello_world():
-  return "Hello"
+  name = request.json.get("name")
+  return {"greeting": "Hello! {}".format(name)}
 
 
 app.run(host="localhost", port=8000)
