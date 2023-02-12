@@ -11,4 +11,4 @@ def hello_world():
   return {"greeting": "Hello! {}".format(name)}
 
 
-app.run(host="localhost", port=8000)
+app.run(host="react-flask-backend.onrender.com", port=8000)
