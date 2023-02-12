@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask, request
 from flask_cors import CORS
 
@@ -10,5 +12,5 @@ def hello_world():
   name = request.json.get("name")
   return {"greeting": "Hello! {}".format(name)}
 
-
-app.run(host="react-flask-backend.onrender.com", port=8000)
+port = int(os.getenv("PORT"))
+app.run(host="0.0.0.0", port=port)
