@@ -7,7 +7,7 @@ function App() {
   const [name, setName] = useState("Your Name")
 
   const onClickHandler = async () => {
-    const response = await fetch('https://react-flask-backend.onrender.com:8000', {
+    const response = await fetch('https://react-flask-backend.onrender.com', {
       mode: "cors",
       method: "post",
       headers: {
